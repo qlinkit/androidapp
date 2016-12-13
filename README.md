@@ -29,5 +29,7 @@ private String protocol = "https";
 
 with the values corresponding to their productive environment.
 
+If you wish, you can do a project **fork** and contribute to the automation of this process. It will be greatly appreciated.
+
 # About
 Qlink.it application is distributed under [MIT license](https://opensource.org/licenses/MIT). You can read more about this project at [https://qlink.it/main](https://qlink.it/main).
