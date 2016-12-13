@@ -108,9 +108,9 @@ public class QlinkIntentActivity extends ActionBarActivity {
 	private String imprint = null;
 	private Boolean blurText = true;
 
-	protected String host = "qlink";
-	protected int port = 443;
-	protected String protocol = "https";
+	private String host = "qlink";
+	private int port = 443;
+	private String protocol = "https";
 	private String currentAppWebVersion = null;
 	private String currentWebVersion = "0";
 	private Boolean forceUpdateFlag = false;
