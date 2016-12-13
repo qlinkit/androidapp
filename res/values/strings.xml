@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Qlink</string>
+    <string name="type">Type your message</string>
+    <string name="typefile">Type a filename</string>
+    <string name="logo">logo</string>
+    <string name="create">qlink it!</string>
+    <string name="save">save</string>
+    <string name="attach">attach file</string>
+    <string name="attach_draw">attach note</string>
+    <string name="delete">detete file</string>
+    <string name="newql">new qlink</string>
+    <string name="replay">answer qlink</string>
+    <string name="save_text">save text as..</string>
+    <string name="ops">This message has EXPIRED</string>
+    <string name="ops_read">This message has been READ</string>
+    <string name="attachments">Attachments</string>
+    <string name="close">Close</string>
+    <string name="reintent">Retry</string>
+    <string name="exit">Exit</string>
+    <string name="encrypting">encrypting in your device\nplease wait..</string>
+    <string name="connectivity">verifying connectivity</string>
+    <string name="searching"> searching qlink..</string>
+    <string name="decrypting"> decrypting in your device\nplease wait..</string>
+    <string name="button">button</string>
+    <string name="about">About Qlink.it</string>
+    <string name="actualization">An update of the application must be installed to continue.</string>
+    <string name="actualization_desc">On the occasion of providing greater security for their communications and improve the quality of service, we ask you to continue using our application upgrade to the latest version available at Play Store.\n\nWe appreciate your cooperation.\nThe team Qlink.it</string>
+    <string name="actualization_button">go to Google Play</string>
+    <string name="imprint">Include IP</string>
+    <string name="imprint_not_used">Include your IP option was not used</string>
+    <string name="select_a_file">Select a File to Upload</string>
+    <string name="max_file_size">Error: max size of file is 1MB.</string>
+    <string name="compressed">The image has been compressed for better performance.</string>
+    <string name="type_message">Type a message please...</string>
+    <string name="inet_disconnected">the device does not have internet access\nplease check your connection</string>
+    <string name="host_disconnected">qlink server is unreachable...\ncheck your internet connection and try again</string>
+    <string name="exception_error">In an unexpected error occurred\nPlease try again</string>
+    <string name="file_download_in">downloaded file in </string>
+    <string name="text_download_in">message saved in </string>
+    <string name="cp_to_clipboard">qlink Copied to Clipboard</string>
+    <string name="dn_to_clipboard">DN Copied to Clipboard</string>
+    <string name="notice1"><b>Heads up!</b> If you leave this screen you will not be able to read this message again</string>
+    <string name="wc1">Send messages ...</string>
+    <string name="wc2">without logins ...</string>
+    <string name="wc3">Simple ...</string>
+    <string name="wc4">Secure ...</string>
+    <string name="wc5">and Confidential.</string>
+    <string name="wc6">go simple and secure</string>
+    <string name="wc7">checking connection...</string>
+    <string name="copyright">©2014 QLink, All Rights Reserved</string>
+    <string name="share_max_size">You can share a maximum of 2000 characters</string>
+
+    <!-- SHARE -->
+    <string name="share_subject">You have a new qlink</string>
+    <string name="share_chooser_text">Share qlink with...</string>
+
+    <string name="discraimer_desc" formatted="false"><b>QLINK.IT PRIVACY POLICY</b> (12/13/2014)\n\n\n\nQlink.it is a web based company that provides a free service for encrypting information and storing that encrypted information in a server until it is requested for the first time or expires.\n\n<b>I - Detailed description of a complete Qlink.it process</b>\n\nWhen a user requests the web qlink.it, it downloads a form where to fill a message and/or attach a file, and also a Java script to encrypt a message in his/her device.  After the user has entered a message and/or attached a file, the script encrypts the information using a random key seeded by the user\'s device entropy.  We call this key the red key.\n\nOnce the information has been encrypted with the red key, the encrypted information is sent to the qlink.it server, but not the red key.  \n\nOnce at the server, the encrypted message is encrypted again with what we call the blue key and stored in a Redis database that has been modified to enhance its security features.  The blue key is returned to the user.\n\nAt the user\'s device, the script uses the red and blue key to create a special internet link in the form https://qlink.it/AAA/bluekey#redkey .  Where \'AAA\' represents a special string for internal use, and the bluekey and redkey are the corresponding blue and red keys, respectively. This special link is what we call a qlink.\n\nThe user can send this qlink to any person using any communication service at will.  This communication service is ignored by Qlink.it and has no relation to it.\n\nOnce this qlink is received by the recipient, he or she can click in the qlink to retrieve the original message.  Due to the special form of the qlink, when it is clicked it sends through the internet all the characters until the hash symbol #, but not the following characters.  Therefore, the red key is not sent to the server.  Once the server receives the corresponding request, it looks for the encrypted message using the blue key to locate it and partially decrypt it, and then returns the still-encrypted message to who did the request.  At that moment the message is secure-deleted from the server.  (If the encrypted message is not requested before its expiration date, then is also secure-deleted from the server.)\n\nTogether with the encrypted message is sent a Java script to decrypt the message at the recipient\'s device using the red key which is possessed by the recipient of the qlink.  At that level the message is decrypted and shown in the recipients\' device.\n\nNotice that if any of the users is using the original Qlink.it APP, then its working is similar, but instead the APP does all the work of a browser.\n\nThe above detailed mechanism has the following consequences:\n\n1. Only who has the complete qlink can read the content of the decrypted message\n\n2. The server never has access to the decrypted information since it never has the red key.\n\n3. If the recipient can read the message after clicking the qlink, the he/she will know that the message was not intercepted.  On the other hand, if any person, robot or whatever, clicks the qlink before the intended recipient, then the recipient can tell that the message was intercepted and eventually read.  \n\n4. After the content of a qlink has been read, there are no traces of the information anywhere but in the screen of the recipient.  Who can save the information and/or download an attached file to his/her device at will.\n\n5. However, neither the recipient can demonstrate the the sender has sent him/her the given information, nor the sender can demonstrate that he/she sent the recipient the given information.  In the users devices remain only qlinks with no content in them.\n\n<b>II – User\'s information recorded by Qlink.it</b>\n\nQlink.it has no access neither to the sender or the recipient\'s identity, since it is an open web service.  It only has access to their IP.  For statistic purposes, Qlink.it could occasionally keep the first two numbers of the IPs, but never the complete IP.\n\nAll the information related to the messages is secure-deleted from the server, either when requested for the first time or when expires as stated at the moment of creation.\n\n<b>III – Third parties</b>\n\nQlink.it does not share any information related to its users to any third party.\n\n<b>IV – Disclaimer on security</b>\n\nQlink.it warns users that it does not exist any web service that can assure a 100% secure transmission of information through the web.  We take security at maximum and make all efforts in our reach to make Qlink.it as secure as possible, but, as previously warned, we cannot assure a 100% secure transmission of the information, nor that the working of the Qlink.it mechanism may not fail due to possible situations not taken into consideration.  In particular, if the qlink is intercepted its information can be read, but the recipient will notice it after clicking the qlink.\n\nWe warn the user that if any web service claims 100% of security then it should not be taken seriously.\n\n<b>V – Disclaimer on contents</b>\n\nQlink.it is not responsible for the information transmitted using the Qlink.it mechanism.  Qlink.it does not create the content of the messages and has no access to it, therefore who opens a qlink should be aware that its content is complete responsibility of who created the qlink.\n\n<b>VI – Disclaimer on the operational service</b>\n\nWe have described the intended Qlink.it operational service, but we warn that all software and/or hardware are subject to possible failures which could yield a possible malfunction of Qlink.it with the eventual loose or modification of the information stored in the server.\n\nQlink.it hires the server service and cannot be responsible for eventual damage, or any kind of alteration or violation of it.\n\n<b>VII – Cookies</b>\n\nQlink.it could use cookies with the only purpose of keeping the user\'s language preference. \n\n<b>VIII – Validity of this policy</b>\n\nThe present policy can be changed by Qlink.it by warning it in qlink.it/main during 24hs. The current form can be found in https://qlink.it/corp/docs/privacy-policy.pdf , and each policy will be stamped with the date of issue in its title.\n\n<b>IX – Further requirements</b>\n\nFor further requirements the user may send an email to security@qlink.it or a regular letter to Paraná 759, Buenos Aires, Argentina.\n\n<b>X – Usage of Qlink.it</b>\n\nUsing Qlink.it in any of its forms and/or usages implies the complete acceptance of the present privacy policy.\n\n\n\n</string>
+    <string name="discraimer_button">Continue</string>
+    <string name="discraimer_title">Qlink.it Privacy Policy</string>
+    
+    <string name="lock_title">Blur Received qlink</string>
+    <string name="lock_summary">Blurry text of received qlink until it is read</string>
+    <string name="imprint_option_title">Include IP</string>
+    <string name="imprint_option_summary">Include my IP as the signature of generated qlinks</string>
+    <string name="about_title">About Qlink.it</string>
+    <string name="about_summary">Read more technical information about Qlink.it</string>
+    <string name="privacy_title">Qlink.it Privacy Policy</string>
+    <string name="privacy_summary">Read the privacy policy of Qlink.it</string>
+    
+    <string name="tap_to_read">Tap to read\nthe message</string>
+    
+    <string name="tap_to_draw">Tap to write\na message</string>
+    <string name="tap_to_init">Tap to init</string>
+    
+    <string name="language_title">Language</string>
+    <string name="language_summary">Select the language of your preference and restart the application</string>
+    
+    <string name="file_unreach">Media file is not accessible. Copy this to local storage before attach.</string>
+    <string name="file_notfound">File not found.</string>
+    
+    <string name="preferencies_security">Security Settings</string>
+    <string name="preferencies_language">Language Preference</string>
+    <string name="preferencies_about">About</string>
+    
+    <string name="how_use_forward_title">What is answer qlink?</string>
+    <string name="how_use_forward_text">Use the answer option to include current message in your reply.</string>
+    <string name="how_use_forward_sign">\?</string>
+    <string name="include_conversation_msg">The text of the last message recieved will be included</string>
+    <string name="get_dn">Get a Delivery Number</string>
+    <string name="dn_description">Use the DN number provided below to get the status of this qlink entering https://qlink.it. \n\nDelivery Number: </string>
+    <string name="dn_automatic">Notify automatically</string>
+    <string name="notification_notice">Qlink status</string>
+    <string name="notification_descr">for qlink</string>
+    <string name="notification_status">READ</string>
+    
+</resources>

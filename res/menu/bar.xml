@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto" >
+    
+    <item
+	      android:id="@+id/btClip"
+	      android:title="@string/cp_to_clipboard"
+	      android:icon="@drawable/toclip"
+	      app:showAsAction="always"
+	      />
+    
+    <!-- 
+    <item
+	      android:id="@+id/btAbout"
+	      android:title="@string/about"
+	      app:showAsAction="never"
+	      />
+    -->
+    <item
+	      android:id="@+id/btFileMenu"
+	      android:title="@string/attach"
+	      android:icon="@drawable/clip_low"
+	      app:showAsAction="always">
+	    <menu>
+		    <item
+			      android:id="@+id/btDraw"
+			      android:title="@string/attach_draw"
+			      android:icon="@drawable/pencil"
+			      app:showAsAction="always"
+			      />
+		     
+		    <item
+			      android:id="@+id/btFileBar"
+			      android:title="@string/attach"
+			      android:icon="@drawable/clip_low"
+			      app:showAsAction="always"
+			      />
+	    </menu>
+    </item>
+    
+    <item android:id="@+id/action_share"
+          android:title="@string/share_chooser_text"
+          app:showAsAction="always"
+          app:actionProviderClass="android.support.v7.widget.ShareActionProvider"
+          />
+    
+    <item android:id="@+id/action_settings"
+          android:title="Settings"
+          android:icon="@drawable/points"
+          app:showAsAction="always" />
+</menu>

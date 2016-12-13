@@ -1,0 +1,9 @@
+# To enable ProGuard in your project, edit project.properties
+# to define the proguard.config property as described in that file.
+#
+
+#-keep class !android.support.v7.internal.view.menu.**,android.support.** {*;}
+-keep class !android.support.v7.internal.view.menu.**,** {*;}
+-dontwarn
+-ignorewarnings
+-dontshrink

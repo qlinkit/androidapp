@@ -1,0 +1,496 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#3f3f3f"
+    tools:context=".QlinkIntentActivity" >
+
+    <ScrollView
+        android:id="@+id/scroller"
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="90dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="0dp"
+        android:background="#fff"
+        android:visibility="gone" >
+
+        <RelativeLayout
+            android:id="@+id/reader"
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:visibility="visible" >
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:id="@+id/textContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true" >
+
+                <TextView
+                    android:id="@+id/notice1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignLeft="@+id/msg"
+                    android:layout_alignRight="@+id/msg"
+                    android:layout_marginTop="0dp"
+                    android:background="@drawable/rounded_corner_notice"
+                    android:padding="5dp"
+                    android:text=""
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textColor="#000000"
+                    android:textSize="5pt"
+                    android:visibility="visible" />
+
+                <EditText
+                    android:id="@+id/msg"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/notice1"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginBottom="0dp"
+                    android:layout_marginTop="0dp"
+                    android:background="@drawable/edit_text"
+                    android:gravity="top|left"
+                    android:inputType="textMultiLine|textNoSuggestions"
+                    android:padding="15dp"
+                    android:scrollbars="vertical"
+                    android:textSize="8pt"
+                    android:visibility="visible" >
+                </EditText>
+            </LinearLayout>
+
+            <RelativeLayout
+                android:id="@+id/attachImageContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/textContainer"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="26dp"
+                android:background="#cfcfcf"
+                android:padding="5dp"
+                android:visibility="gone" >
+
+                <TextView
+                    android:id="@+id/attachImageTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="26dp"
+                    android:background="#00ffffff"
+                    android:textColor="#444444" />
+
+                <ImageView
+                    android:id="@+id/attachImage"
+                    android:layout_width="match_parent"
+                    android:layout_height="400dp"
+                    android:layout_below="@+id/attachImageTitle"
+                    android:onClick="downloadFile"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/qlink" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/imprintContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/attachImageContainer" >
+
+                <TextView
+                    android:id="@+id/textView1"
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp"
+                    android:layout_alignParentBottom="true"
+                    android:background="#ffffff" />
+            </RelativeLayout>
+        </RelativeLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/actionAttach"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="88dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:background="#ffffff"
+        android:orientation="vertical"
+        android:paddingTop="5dp"
+        android:visibility="gone" >
+
+        <Button
+            android:id="@+id/btFile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginBottom="4dp"
+            android:layout_marginLeft="4dp"
+            android:background="@drawable/rounded_down_attach"
+            android:onClick="downloadFile"
+            android:paddingBottom="10dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:paddingTop="5dp"
+            android:textColor="#bcbcbc"
+            android:textSize="7pt"
+            android:visibility="gone" />
+
+        <ProgressBar
+            android:id="@+id/progressBar1"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="4dp"
+            android:layout_alignLeft="@+id/btFile"
+            android:layout_alignRight="@+id/btFile"
+            android:layout_below="@+id/btFile"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="4dp"
+            android:layout_marginTop="-10dp"
+            android:background="@drawable/rounded_progress_attach"
+            android:max="100"
+            android:progress="0"
+            android:progressDrawable="@drawable/progress"
+            android:visibility="gone" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/imp_container"
+        android:layout_width="match_parent"
+        android:layout_height="24dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="66dp"
+        android:background="#ffffff"
+        android:padding="0dp"
+        android:visibility="gone" >
+    	<TextView
+                    android:id="@+id/imprint"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/rounded_corner_notice"
+                    android:text=""
+                    android:textColor="#000000"
+                    android:textSize="5pt"
+                    android:visibility="visible" />
+    </LinearLayout>
+    
+    <LinearLayout
+        android:id="@+id/reply_button_container"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="0dp"
+        android:background="#ffffff"
+        android:padding="8dp"
+        android:orientation="horizontal"
+        android:visibility="gone" >
+
+        <Button
+            android:id="@+id/newLink"
+            android:layout_width="122dp"
+            android:layout_height="46dp"
+            android:background="@drawable/rounded_corner"
+            android:onClick="replyQlink"
+            android:padding="10dp"
+            android:text="@string/newql"
+            android:textColor="#ffffff"
+            android:textSize="7pt"
+            android:visibility="visible" />
+
+        <Button
+            android:id="@+id/forwardLink"
+            android:layout_width="match_parent"
+            android:layout_height="46dp"
+            android:layout_marginLeft="5dp"
+            android:background="@drawable/rounded_corner"
+            android:onClick="forwardQlink"
+            android:padding="10dp"
+            android:layout_marginRight="33dp"
+            android:text="@string/replay"
+            android:textColor="#ffffff"
+            android:textSize="7pt"
+            android:visibility="visible" />
+        
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/warning1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="64dp"
+        android:background="@drawable/rounded_corner_warning"
+        android:gravity="center_horizontal|center_vertical"
+        android:text="@string/ops"
+        android:textColor="#ff0000"
+        android:textSize="8pt"
+        android:visibility="gone" />
+
+    <Button
+        android:id="@+id/newLink2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/warning1"
+        android:layout_alignRight="@+id/warning1"
+        android:layout_below="@+id/warning1"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/rounded_corner"
+        android:onClick="replyQlink"
+        android:paddingBottom="8dp"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:paddingTop="8dp"
+        android:text="@string/newql"
+        android:textColor="#ffffff"
+        android:textSize="8pt"
+        android:visibility="gone" />
+
+    <RelativeLayout
+        android:id="@+id/warning2"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="#cc3f3f3f"
+        android:clickable="false"
+        android:visibility="gone" >
+
+        <TextView
+            android:id="@+id/warning2text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_margin="20dp"
+            android:background="@drawable/rounded_corner_warning"
+            android:gravity="center_horizontal|center_vertical"
+            android:text="@string/inet_disconnected"
+            android:textColor="#ff0000"
+            android:textSize="8pt"
+            android:visibility="gone" />
+
+        <Button
+            android:id="@+id/closeWar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignRight="@+id/warning2text"
+            android:layout_below="@+id/warning2text"
+            android:background="@drawable/rounded_corner"
+            android:onClick="closeWarning"
+            android:paddingBottom="0dp"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"
+            android:paddingTop="0dp"
+            android:text="@string/close"
+            android:textColor="#dfdfdf"
+            android:textSize="8pt"
+            android:visibility="gone" />
+
+        <Button
+            android:id="@+id/reinWar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignRight="@+id/warning2text"
+            android:layout_below="@+id/warning2text"
+            android:background="@drawable/rounded_corner"
+            android:onClick="reintentWarning"
+            android:paddingBottom="0dp"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"
+            android:paddingTop="0dp"
+            android:text="@string/reintent"
+            android:textColor="#dfdfdf"
+            android:textSize="8pt"
+            android:visibility="gone" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/decripting"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="#77000000"
+        android:visibility="gone" >
+
+        <LinearLayout
+            android:id="@+id/linearLayout5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_marginBottom="80dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:background="@drawable/modal_back_white"
+            android:orientation="horizontal"
+            android:padding="15dp" >
+
+            <ProgressBar
+                android:id="@+id/decriptingImg"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:indeterminate="true"
+                android:indeterminateDrawable="@drawable/splash" />
+
+            <TextView
+                android:id="@+id/decriptingText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:gravity="center"
+                android:paddingLeft="5dp"
+                android:text="@string/decrypting"
+                android:textColor="#000000"
+                android:textSize="7pt" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <!--
+    <TextView
+        android:id="@+id/imprint"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/newLink"
+        android:layout_below="@+id/newLink"
+        android:layout_marginTop="3dp"
+        android:text=""
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="#ffffff"
+        android:textSize="7pt"
+        android:visibility="gone" />
+    -->
+
+
+    <!--
+    <Button
+        android:id="@+id/saveText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/newLink"
+        android:layout_alignBottom="@+id/newLink"
+        android:layout_alignLeft="@+id/msg"
+        android:background="@drawable/rounded_corner"
+        android:onClick="downloadText"
+        android:padding="12dp"
+        android:text="@string/save_text"
+        android:textColor="#ffffff"
+        android:textSize="7pt"
+        android:visibility="gone" />
+    -->
+
+    <RelativeLayout
+        android:id="@+id/namefile"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="#cc3f3f3f"
+        android:clickable="false"
+        android:visibility="gone" >
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/edit_text"
+            android:clickable="false"
+            android:padding="10dp" >
+
+            <Button
+                android:id="@+id/savetext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignRight="@+id/filename"
+                android:layout_alignTop="@+id/filename"
+                android:layout_marginTop="47dp"
+                android:background="@drawable/rounded_corner"
+                android:onClick="downloadText2"
+                android:paddingBottom="5dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:paddingTop="5dp"
+                android:text="@string/save"
+                android:textColor="#dfdfdf"
+                android:textSize="8pt"
+                android:visibility="visible" />
+
+            <TextView
+                android:id="@+id/legendSave"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="10dp"
+                android:text="@string/save_text"
+                android:textSize="7pt" />
+
+            <EditText
+                android:id="@+id/filename"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/legendSave"
+                android:layout_marginBottom="20dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/edit_text_file"
+                android:ems="10"
+                android:gravity="center_vertical"
+                android:hint="@string/typefile"
+                android:padding="10dp"
+                android:textColor="#000"
+                android:textSize="8pt"
+                android:visibility="visible" >
+
+                <requestFocus android:layout_width="wrap_content" />
+            </EditText>
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <RelativeLayout 
+        android:id="@+id/tar_to_read" 
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="0dp"
+        android:visibility="gone"
+        android:layout_marginBottom="90dp"
+        android:background="#66000000" >
+
+        <Button
+            android:id="@+id/button_tar_to_read"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:textSize="15dp"
+            android:textColor="#ffffff"
+            android:text="@string/tap_to_read"
+            android:background="@drawable/rounded_corner_real"
+            android:padding="20dp" />
+        
+    </RelativeLayout>
+
+    <Button
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp"
+        android:visibility="gone"
+        android:id="@+id/helpLink"
+        android:layout_width="30dp"
+        android:layout_height="46dp"
+        android:textStyle="bold"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/reply_button_container"
+        android:background="#4413b8be"
+        android:onClick="helpQlink"
+        android:padding="2dp"
+        android:textColor="#2D80A1"
+        android:text="@string/how_use_forward_sign"
+        android:textSize="7pt"
+        />
+
+</RelativeLayout>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <PreferenceCategory android:title="@string/preferencies_security" >
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="prefLockScreen"
+            android:summary="@string/lock_summary"
+            android:title="@string/lock_title" >
+        </CheckBoxPreference>
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="imprintOption"
+            android:summary="@string/imprint_option_summary"
+            android:title="@string/imprint_option_title" >
+        </CheckBoxPreference>
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="@string/preferencies_language" >
+        <ListPreference 
+            android:key="languageLocale" 
+            android:summary="@string/language_summary"
+            android:title="@string/language_title"/>
+    </PreferenceCategory>
+    
+    <PreferenceCategory android:title="@string/preferencies_about" >
+        <Preference android:title="@string/about_title"
+                android:key="buttonAbout"
+                android:summary="@string/about_summary"/>
+        <Preference android:title="@string/privacy_title"
+                android:key="buttonPrivacy"
+                android:summary="@string/privacy_summary"/>
+    </PreferenceCategory>
+    
+</PreferenceScreen>

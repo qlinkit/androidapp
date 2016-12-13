@@ -1,0 +1,54 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#3f3f3f" 
+    android:padding="10dp"
+    >
+
+     <TextView
+         android:id="@+id/discraimer_title"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:layout_alignParentTop="true"
+         android:layout_centerHorizontal="true"
+         android:background="@drawable/rounded_corner_header"
+         android:gravity="left"
+         android:text="@string/discraimer_title"
+         android:textColor="#333333"
+         android:textSize="8pt" />
+
+     <Button
+         android:id="@+id/btDiscraimerApp"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_alignLeft="@+id/discraimer_title"
+         android:layout_alignParentBottom="true"
+         android:layout_alignParentRight="true"
+         android:layout_weight="1"
+         android:background="@drawable/rounded_corner"
+         android:onClick="acceptDiscraimer"
+         android:padding="8dp"
+         android:text="@string/discraimer_button"
+         android:textColor="#ffffff"
+         android:textSize="8pt" />
+
+     <ScrollView android:layout_height="wrap_content"
+         android:layout_width="wrap_content"
+         android:layout_above="@+id/btDiscraimerApp"
+	     android:layout_alignLeft="@+id/discraimer_title"
+	     android:layout_alignRight="@+id/btDiscraimerApp"
+	     android:layout_below="@+id/discraimer_title"
+         >
+	     <TextView
+	         android:id="@+id/discraimerText"
+	         android:padding="15dp" 
+	         android:background="#ffffff"
+	         android:textColor="#555555"
+	         android:layout_width="wrap_content"
+	         android:layout_height="wrap_content"
+	         android:text="@string/discraimer_desc"
+	         android:textSize="5pt" />
+     </ScrollView>
+     
+</RelativeLayout>

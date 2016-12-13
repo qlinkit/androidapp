@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp"
+    android:onClick="doNothing"
+    android:clickable="false"
+    android:focusable="false"
+    android:focusableInTouchMode="false"
+    android:background="#3f3f3f"
+    >
+
+    <android.gesture.GestureOverlayView
+        android:id="@+id/signaturePad"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/white"
+        android:eventsInterceptionEnabled="true"
+        android:fadeEnabled="false"
+        android:gestureColor="@android:color/black"
+        android:gestureStrokeLengthThreshold="0.05"
+        android:gestureStrokeAngleThreshold="0.05"
+        android:fadeDuration="10000000"
+        android:fadeOffset="10000000"
+        android:gestureStrokeWidth="2.5"
+        android:gestureStrokeType="multiple"
+        android:orientation="vertical" >
+    </android.gesture.GestureOverlayView>
+
+    <RelativeLayout
+    	android:layout_width="match_parent"
+		android:layout_height="40dp"
+		android:background="#f8f8f8"
+		android:layout_alignParentTop="true"
+		android:padding="5dp"
+		>
+
+        <ImageView
+            android:id="@+id/drawErase"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:src="@drawable/delete"
+            android:onClick="setToErase" />
+
+    </RelativeLayout>
+        
+    <Button
+        android:id="@+id/doneDraw"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:background="@drawable/rounded_corner"
+        android:onClick="saveSig"
+        android:padding="8dp"
+        android:text="@string/attach_draw"
+        android:textColor="#ffffff"
+        android:textSize="8pt" />
+
+    <RelativeLayout 
+        android:id="@+id/tap_to_draw" 
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="0dp"
+        android:visibility="visible"
+        android:layout_marginBottom="0dp"
+        android:background="#66000000"
+        android:onClick="initDraw">
+
+        <Button
+            android:id="@+id/button_tap_to_draw"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:textSize="15dp"
+            android:textColor="#ffffff"
+            android:text="@string/tap_to_draw"
+            android:background="@drawable/rounded_corner_real"
+            android:padding="20dp" 
+            android:onClick="initDraw" />
+        
+    </RelativeLayout>
+    
+</RelativeLayout>

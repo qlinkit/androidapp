@@ -1,0 +1,47 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/transparent" 
+    android:paddingLeft="20dp"
+    android:paddingRight="20dp"
+    android:gravity="center_vertical"
+    >
+
+     <TextView
+         android:id="@+id/wcHelp"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:layout_alignParentTop="true"
+         android:layout_centerHorizontal="true"
+         android:background="@drawable/rounded_corner_header"
+         android:text="@string/how_use_forward_title"
+         android:textColor="#333333"
+         android:textSize="6pt" />
+
+     <TextView
+         android:id="@+id/helpText"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_below="@+id/wcHelp"
+         android:background="#ffffff"
+         android:padding="15dp"
+         android:text="@string/how_use_forward_text"
+         android:textColor="#555555"
+         android:textSize="6pt" />
+
+     <Button
+         android:id="@+id/btUpdateApp"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_alignLeft="@+id/helpText"
+         android:layout_alignRight="@+id/helpText"
+         android:layout_below="@+id/helpText"
+         android:background="@drawable/rounded_corner"
+         android:onClick="closeHelpLink"
+         android:padding="8dp"
+         android:text="@string/close"
+         android:textColor="#ffffff"
+         android:textSize="6pt" />
+     
+</RelativeLayout>
